@@ -41,8 +41,8 @@ export default function Navbar() {
 
                         <Button className="hidden md:inline-flex items-center" variant="secondary"> Log In </Button>
                         <Button
-                        className="hidden md:inline-flex items-center" 
-                        variant="primary"> Sign Up</Button>
+                            className="hidden md:inline-flex items-center"
+                            variant="primary"> Sign Up</Button>
 
                     </div>
                 </div>
