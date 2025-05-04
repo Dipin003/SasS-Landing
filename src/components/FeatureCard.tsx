@@ -12,5 +12,5 @@ export default function FeatureCard(props: { title: string, description: string,
                 <p className="text-white/50 mt-2">{description}</p>
             </div>
         </div>
-    )
+    ) 
 }
