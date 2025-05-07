@@ -8,6 +8,7 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+    
     return (
         <section className="py-16">
             <div className="container">
