@@ -6,7 +6,7 @@ import designExample2Image from "@/assets/images/design-example-2.png";
 import Image from "next/image";
 import Pointer from "@/components/Pointer";
 
-import { motion, useAnimate } from "framer-motion"
+import { delay, motion, useAnimate } from "framer-motion"
 import { useEffect } from "react";
 
 import cursorYouImage from "@/assets/images/cursor-you.svg";
@@ -48,11 +48,19 @@ export default function Hero() {
             ]
         ]);
 
-
         rightDesignAnimate([
-            [rightDesignScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+            [
+                rightDesignScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }
+            ],
             [rightDesignScope.current, { x: 0, y: 0 }, { duration: 0.5 }],
+        ])
 
+        rightPointerAnimate([
+            [
+                rightPointerScope.current,
+                { opacity: 1 },
+                { duration: 0.5, delay: 1.5 }
+            ],
             [
                 rightPointerScope.current,
                 { x: 175, y: 0 },
@@ -62,16 +70,16 @@ export default function Hero() {
                 rightPointerScope.current,
                 { x: 0, y: [0, 20, 0] },
                 { duration: 0.5 }
-            ]
+            ],
         ])
 
     }, [])
 
     return (
         <section className="py-24 overflow-x-clip"
-        style={{
-            cursor: `url(${cursorYouImage.src}), auto`
-        }}
+            style={{
+                cursor: `url(${cursorYouImage.src}), auto`
+            }}
         >
             <div className="container relative">
 
@@ -82,8 +90,8 @@ export default function Hero() {
 
 
                     className="absolute -left-64 top-16 hidden lg:block">
-                    <Image src={designExample1Image} alt="design example 1" 
-                    draggable="false"
+                    <Image src={designExample1Image} alt="design example 1"
+                        draggable="false"
                     />
                 </motion.div>
 
@@ -103,7 +111,6 @@ export default function Hero() {
                     className="absolute -right-64 -top-16 hidden lg:block">
                     <Image src={designExample2Image} alt="design example 2" draggable="false" />
                 </motion.div>
-
 
                 <motion.div
                     ref={rightPointerScope}
