@@ -9,7 +9,6 @@ import framerIcon from "@/assets/images/framer-logo.svg";
 import githubIcon from "@/assets/images/github-logo.svg";
 
 
-
 const integrations = [
     { name: "Figma", icon: figmaIcon, description: "Figma is a collaborative interface design tool." },
     { name: "Notion", icon: notionIcon, description: "Notion is an all-in-one workspace for notes and docs." },
@@ -22,6 +21,7 @@ const integrations = [
 export type IntegrationType = typeof integrations;
 
 export default function Integrations() {
+
     return (
         <section className="py-24 overflow-hidden">
             <div className="container">
@@ -39,7 +39,7 @@ export default function Integrations() {
                     <div>
                         <div className="h-[400px] lg:h-[800px] mt-8 lg:mt-0 overflow-hidden grid md:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
                             <IntegrationsColumn integrations={integrations} />
-                            <IntegrationsColumn integrations={integrations.slice().reverse()} className="hidden md:flex" />
+                            <IntegrationsColumn reverse integrations={integrations.slice().reverse()} className="hidden md:flex" />
                         </div>
                     </div>
                 </div>
